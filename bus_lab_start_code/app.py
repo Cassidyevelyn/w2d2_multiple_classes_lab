@@ -1,6 +1,9 @@
 from person import Person
 # from bus import Bus
+from bus import Bus
 # from bus_stop import BusStop
+
+bus_1 = Bus(16, "cc_clan")
 
 person_1 = Person("Steven", 34)
 person_2 = Person("Laura", 21)
@@ -10,6 +13,8 @@ print("There are 3 potential passengers.")
 print(f"Name: {person_1.name}, Age: {person_1.age}.")
 print(f"Name: {person_2.name}, Age: {person_2.age}.")
 print(f"Name: {person_3.name}, Age: {person_3.age}.")
+
+print(bus_1.drive_method())
 
 # bus = Bus(900, "Edinburgh")
 # print(f"The {bus.route_number} bus is heading to {bus.destination}.")
