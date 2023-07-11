@@ -17,4 +17,4 @@ class Bus:
         self.passengers.remove(person)
 
     def empty_bus(self):
-        self.passengers = []
+        self.passengers = []   #.clear() built-in function that does the same as an empty list []
