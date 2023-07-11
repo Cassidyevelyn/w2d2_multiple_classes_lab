@@ -3,7 +3,7 @@ from person import Person
 from bus import Bus
 # from bus_stop import BusStop
 
-bus_1 = Bus(16, "cc_clan")
+bus = Bus(900, "Edinburgh")
 
 person_1 = Person("Steven", 34)
 person_2 = Person("Laura", 21)
@@ -14,31 +14,29 @@ print(f"Name: {person_1.name}, Age: {person_1.age}.")
 print(f"Name: {person_2.name}, Age: {person_2.age}.")
 print(f"Name: {person_3.name}, Age: {person_3.age}.")
 
-print(bus_1.drive_method())
+bus = Bus(900, "Edinburgh")
+print(f"The {bus.route_number} bus is heading to {bus.destination}.")
+print(f"The {bus.route_number} bus has left the station. {bus.drive()}.")
 
-# bus = Bus(900, "Edinburgh")
-# print(f"The {bus.route_number} bus is heading to {bus.destination}.")
-# print(f"The {bus.route_number} bus has left the station. {bus.drive()}.")
+starting_passenger_count = bus.passenger_count()
+print(f"There are initially {starting_passenger_count} passengers on the bus.")
 
-# starting_passenger_count = bus.passenger_count()
-# print(f"There are initially {starting_passenger_count} passengers on the bus.")
+bus.pick_up(person_1)
+print(f"The {bus.route_number} bus picked up {bus.passengers[0].name}.")
+print(f"There are now {bus.passenger_count()} passengers on the bus.")
 
-# bus.pick_up(person_1)
-# print(f"The {bus.route_number} bus picked up {bus.passengers[0].name}.")
-# print(f"There are now {bus.passenger_count()} passengers on the bus.")
+bus.drop_off(person_1)
+print(f"The {bus.route_number} bus dropped off {person_1.name}.")
+print(f"There are now {bus.passenger_count()} passengers on the bus.")
 
-# bus.drop_off(person_1)
-# print(f"The {bus.route_number} bus dropped off {person_1.name}.")
-# print(f"There are now {bus.passenger_count()} passengers on the bus.")
+bus.pick_up(person_1)
+bus.pick_up(person_2)
+bus.pick_up(person_3)
+print(f"The {bus.route_number} bus picked up {bus.passenger_count()} passengers.")
 
-# bus.pick_up(person_1)
-# bus.pick_up(person_2)
-# bus.pick_up(person_3)
-# print(f"The {bus.route_number} bus picked up {bus.passenger_count()} passengers.")
-
-# bus.empty_bus()
-# print(f"The {bus.route_number} bus dropped off all of its passengers.")
-# print(f"There are now {bus.passenger_count()} passengers on the bus.")
+bus.empty_bus()
+print(f"The {bus.route_number} bus dropped off all of its passengers.")
+print(f"There are now {bus.passenger_count()} passengers on the bus.")
 
 # bus_stop = BusStop("Buchanan Bus Station")
 # print(f"There are {bus_stop.queue_length()} pasengers waiting at {bus_stop.name}.")

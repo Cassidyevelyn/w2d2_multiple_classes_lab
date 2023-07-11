@@ -1,17 +1,20 @@
 class Bus:
     def __init__(self, route, destination):
-        self.route = route
+        self.route_number = route
         self.destination = destination 
         self.passengers = []
         
-    def drive_method(self):
+    def drive(self):
         return "Brum, Brum!"
 
+    def passenger_count(self):
+        return len(self.passengers)
 
+    def pick_up(self, person):
+        self.passengers.append(person)
 
-    def how_many_passengers(self):
-        len(self.passengers)
-    
+    def drop_off(self, person):
+        self.passengers.remove(person)
 
-
-
+    def empty_bus(self):
+        self.passengers = []
